@@ -1,0 +1,31 @@
+export default [
+    {label: 'B', style: 'BOLD', classname: 'bold', type: 'inline'},
+    {label: 'I', style: 'ITALIC', classname: 'italic', type: 'inline'},
+    {label: 'U', style: 'UNDERLINE', classname: 'underline', type: 'inline'},
+    {type: 'separator'},
+    // {label: 'List', style: 'unordered-list-item', icon: 'icon-list', type: 'block'},
+    {label: 'List', style: 'unordered-list-item', classname: 'list', type: 'block'},
+    {type: 'separator'},
+    // {label: 'IMG', style: 'IMAGE', icon: 'icon-image', type: 'image'},
+    {label: 'Image', style: 'IMAGE', classname: 'image', type: 'image'},
+    // {label: 'Link', style: 'LINK', icon: 'icon-link', type: 'link'},
+    {label: 'Link', style: 'LINK', classname: 'link', type: 'link'},
+    // {label: 'Unlink', style: 'UNLINK', icon: 'icon-link', type: 'unlink'},
+    {label: 'Unlink', style: 'UNLINK', classname: 'unlink', type: 'unlink'},
+    {type: 'separator'},
+    // {label: '>_', style: 'code-block', classname: 'icon-code', type: 'block'},
+    {label: '>_', style: 'code-block', classname: 'code', type: 'block'},
+];
+
+
+// OTHER OPTIONS
+  // {label: 'H1', style: 'header-one', icon: 'header'},
+  // {label: 'H2', style: 'header-two'},
+  // {label: 'H3', style: 'header-three'},
+  // {label: 'H4', style: 'header-four'},
+  // {label: 'H5', style: 'header-five'},
+  // {label: 'H6', style: 'header-six'},
+  // {label: 'Blockquote', style: 'blockquote'},
+  // {label: 'OL', style: 'ordered-list-item', icon: 'icon-link'},
+  // {label: 'Underline', style: 'UNDERLINE'},
+  // {label: 'Monospace', style: 'CODE'},

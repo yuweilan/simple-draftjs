@@ -1,0 +1,59 @@
+{
+  "name": "simple-draftjs",
+  "version": "1.0.1",
+  "description": "Simple rich editor for React.js built with draftjs",
+  "main": "dist/Editor.js",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src",
+    "build": "babel src --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhta/simple-draftjs"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "draftjs",
+    "rich-editor",
+    "editor",
+    "javascript",
+    "wysiwyg",
+    "edit",
+    "webpack"
+  ],
+  "author": "Jeison Higuita <jeisonhs93@gmail.com> (http://github.com/jhta)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhta/simple-draftjs/issues"
+  },
+  "homepage": "https://github.com/jhta/simple-draftjs",
+  "devDependencies": {
+    "babel-cli": "^6.8.0",
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^6.0.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "babel-preset-stage-1": "^6.5.0",
+    "classnames": "^2.2.3",
+    "core-decorators": "^0.12.2",
+    "draft-js": "^0.5.0",
+    "draft-js-export-html": "^0.1.12",
+    "draft-js-export-markdown": "^0.1.4",
+    "eslint": "^2.8.0",
+    "eslint-plugin-react": "^3.6.2",
+    "immutable": "^3.8.1",
+    "react-hot-loader": "^1.3.0",
+    "relpers": "^1.3.3",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
+  }
+}
