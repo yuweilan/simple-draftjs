@@ -16,7 +16,6 @@ import Media from './components/Media';
 import CustomControls from './components/CustomControls';
 import EditorButtonActions from './components/EditorButtonActions';
 import getPlaceholderStyle from './utils/getPlaceholderStyle';
-// import { validateImage } from './validateFormat';
 
 class PlatziEditor extends Component {
 
@@ -29,6 +28,7 @@ class PlatziEditor extends Component {
     isDetail: PropTypes.bool,
     export: PropTypes.oneOf(['markdown', 'html']),
     messages: PropTypes.object,
+    controls: PropTypes.array,
   };
 
   static defaultProps = {
@@ -294,7 +294,7 @@ class PlatziEditor extends Component {
 
 
   @injectProps
-  render({placeholder, hasHideEditorButton, showButtons, messages}) {
+  render({placeholder, hasHideEditorButton, showButtons, messages, controls}) {
     const {editorState} = this.state;
     return (
       <div>
@@ -302,6 +302,7 @@ class PlatziEditor extends Component {
           <header className="RichEditor-header">
             <CustomControls
               editorState={editorState}
+              controls={controls}
               onAddMedia={this.onAddMedia.bind(this)}
               onToggleInline={this.toggleInlineStyle.bind(this)}
               onToggleBlock={this.toggleBlockType.bind(this)}

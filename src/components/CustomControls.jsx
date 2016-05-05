@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { autobind } from 'core-decorators';
 import Button from './Button';
-import DEFAULT_CONTROLS from '../constants/defaultControls';
+// import DEFAULT_CONTROLS from '../constants/defaultControls';
+import getButtons from '../utils/getButtons';
+
 
 class InlineControls extends Component {
 
@@ -61,9 +63,11 @@ class InlineControls extends Component {
    * @return {Component}
    */
   render() {
+    const controls = getButtons(this.props.controls);
+    if (controls.lenght === 0) return null;
     return (
       <div className="RichEditor-controls">
-        {DEFAULT_CONTROLS.map((control, index) => this.selectType(control, index))}
+        {controls.map((control, index) => this.selectType(control, index))}
       </div>
     );
   }
