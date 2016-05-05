@@ -23,7 +23,7 @@ class PlatziEditor extends Component {
     getContentAction: PropTypes.func,
     hideButtonAction: PropTypes.func,
     showButtons: PropTypes.bool,
-    hasHideEditorButton: PropTypes.bool,
+    showSecondButton: PropTypes.bool,
     placeholder: PropTypes.string,
     isDetail: PropTypes.bool,
     export: PropTypes.oneOf(['markdown', 'html']),
@@ -218,14 +218,14 @@ class PlatziEditor extends Component {
     const {
       getContentAction,
       hideButtonAction,
-      hasHideEditorButton,
+      showSecondButton,
     } = this.props;
     getContentAction(
       this.props.export === 'markdown'
         ? this.getMarkdown()
         : this.getHtml()
     );
-    if (hasHideEditorButton) {
+    if (showSecondButton) {
       hideButtonAction();
     }
     this.resetEditor();
@@ -294,7 +294,7 @@ class PlatziEditor extends Component {
 
 
   @injectProps
-  render({placeholder, hasHideEditorButton, showButtons, messages, controls}) {
+  render({placeholder, showSecondButton, showButtons, messages, controls}) {
     const {editorState} = this.state;
     return (
       <div>
@@ -327,7 +327,7 @@ class PlatziEditor extends Component {
           </section>
         </section>
         <EditorButtonActions
-          hasHideEditorButton={hasHideEditorButton}
+          hasHideEditorButton={showSecondButton}
           showButtons={showButtons}
           messages={messages}
           onSendResponse={this.onSendResponse.bind(this)}
