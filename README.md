@@ -12,8 +12,7 @@ npm i -S simple-draftjs
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';
-// import Editor from './Editor.jsx'
-import Editor from './Editor.jsx';
+import Editor from 'simple-draftjs';
 
 const controls = [
 'bold',
