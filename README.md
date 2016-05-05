@@ -9,7 +9,7 @@ npm i -S simple-draftjs
 ```
 
 ### How to use?
-```
+```javascript
 import React from 'react';
 import { render } from 'react-dom';
 import Editor from 'simple-draftjs';
@@ -43,8 +43,8 @@ open http://localhost:3002
 
 ### Dependencies
 
-* React
-* Webpack
+* [React](https://facebook.github.io/react/)
+* [Webpack](https://webpack.github.io/)
 * [draft-js](https://facebook.github.io/draft-js)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [babel-loader](https://github.com/babel/babel-loader)
