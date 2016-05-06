@@ -16,6 +16,7 @@ import Media from './components/Media';
 import CustomControls from './components/CustomControls';
 import EditorButtonActions from './components/EditorButtonActions';
 import getPlaceholderStyle from './utils/getPlaceholderStyle';
+import defaultControls from './constants/defaultControls';
 
 class PlatziEditor extends Component {
 
@@ -41,7 +42,8 @@ class PlatziEditor extends Component {
         send: 'Send',
         cancel: 'Cancel',
       }
-    }
+    },
+    controls: defaultControls,
   };
 
   state = {

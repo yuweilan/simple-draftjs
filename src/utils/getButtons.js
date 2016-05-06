@@ -1,4 +1,6 @@
 import Immutable from 'immutable';
+import objectAssign from 'object-assign';
+
 
 const options = Immutable.Map({
   'bold': {label: 'B', style: 'BOLD', classname: 'bold', type: 'inline'},
@@ -16,10 +18,20 @@ const options = Immutable.Map({
   'code': {label: '>_', style: 'code-block', classname: 'code', type: 'block'},
   'blockquote': {label: 'Blockquote', style: 'blockquote', classname: 'code'},
   'separator': {type: 'separator'},
-})
+});
+
+const getControl = (action) =>
+  objectAssign(
+    {},
+    action,
+    options.get(action.name.trim())
+);
+
 
 export default arrayOptions =>
   arrayOptions
-  .map(action => options.get(action.trim()))
-  .filter(action => (typeof action !== 'undefined'));
+  .map(action => getControl(action))
+  .filter(action =>
+    ((typeof action !== 'undefined') && action !== {})
+  );
 
