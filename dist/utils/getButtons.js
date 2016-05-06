@@ -8,6 +8,10 @@ var _immutable = require('immutable');
 
 var _immutable2 = _interopRequireDefault(_immutable);
 
+var _objectAssign = require('object-assign');
+
+var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var options = _immutable2.default.Map({
@@ -28,10 +32,14 @@ var options = _immutable2.default.Map({
   'separator': { type: 'separator' }
 });
 
+var getControl = function getControl(action) {
+  return (0, _objectAssign2.default)({}, action, options.get(action.name.trim()));
+};
+
 exports.default = function (arrayOptions) {
   return arrayOptions.map(function (action) {
-    return options.get(action.trim());
+    return getControl(action);
   }).filter(function (action) {
-    return typeof action !== 'undefined';
+    return typeof action !== 'undefined' && action !== {};
   });
 };

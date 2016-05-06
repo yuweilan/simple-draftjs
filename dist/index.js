@@ -12,16 +12,13 @@ var _Editor2 = _interopRequireDefault(_Editor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var controls = ['bold', 'italic', 'underline', 'separator', 'unordered-list', 'separator', 'image', 'link', 'unlink', 'separator', 'code'];
-// import Editor from './Editor.jsx'
-
-
 (0, _reactDom.render)(_react2.default.createElement(_Editor2.default, {
   getContentAction: printHTML,
   hideButtonAction: closeEditor,
-  placeholder: "do somenthing!",
-  controls: controls
+  placeholder: "do somenthing!"
 }), document.getElementById('root'));
+// import Editor from './Editor.jsx'
+
 
 function printHTML(content) {
   console.log("func ok");
