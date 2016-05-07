@@ -1,6 +1,6 @@
 {
   "name": "simple-draftjs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhta/simple-draftjs"
+    "url": "https://github.com/PlatziDev/simple-draftjs"
   },
   "keywords": [
     "react",
@@ -26,9 +26,9 @@
   "author": "Jeison Higuita <jeisonhs93@gmail.com> (http://github.com/jhta)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jhta/simple-draftjs/issues"
+    "url": "https://github.com/PlatziDev/simple-draftjs/issues"
   },
-  "homepage": "https://github.com/jhta/simple-draftjs",
+  "homepage": "https://github.com/PlatziDev/simple-draftjs",
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-core": "^6.0.20",
