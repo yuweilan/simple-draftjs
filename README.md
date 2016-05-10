@@ -14,19 +14,20 @@ import React from 'react';
 import { render } from 'react-dom';
 import Editor from 'simple-draftjs';
 
-const controls = [
-'bold',
-'italic',
-'underline',
-'separator',
-'unordered-list',
-'separator',
-'image',
-'link',
-'unlink',
-'separator',
-'code'
+export default [
+  { name: 'bold' },
+  { name: 'italic' },
+  { name: 'underline' },
+  { name: 'separator' },
+  { name: 'unordered-list' },
+  { name: 'separator' },
+  { name: 'image' },
+  { name: 'link' },
+  { name: 'unlink' },
+  { name: 'separator' },
+  { name: 'code' },
 ];
+
 
 render(
   <Editor
@@ -65,13 +66,20 @@ function getContent(content) {
 [array] list of elements to show as button options
 Note: separator is the line for serparate items "|"
 ```javascript
-const controls = [
-'bold',
-'italic',
-'underline',
-'separator',
-'unordered-list',
+export default [
+  { name: 'bold' },
+  { name: 'italic' },
+  { name: 'underline' },
+  { name: 'separator' },
+  { name: 'unordered-list' },
+  { name: 'separator' },
+  { name: 'image' },
+  { name: 'link' },
+  { name: 'unlink' },
+  { name: 'separator' },
+  { name: 'code' },
 ];
+
 <Editor controls={controls} />
 ```
 ##### export (optional)
