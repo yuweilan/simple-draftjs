@@ -16,7 +16,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Editor from 'simple-draftjs';
 
-export default [
+const buttons = [
   { name: 'bold' },
   { name: 'italic' },
   { name: 'underline' },
@@ -29,6 +29,22 @@ export default [
   { name: 'separator' },
   { name: 'code' },
 ];
+
+/** optional css icons:
+const buttons = [
+  { name: 'bold' },
+  { name: 'italic' },
+  { name: 'underline' },
+  { name: 'separator' },
+  { name: 'unordered-list', icon: 'icon-list' },
+  { name: 'separator' },
+  { name: 'image', icon: 'icon-image'},
+  { name: 'link', icon: 'icon-link'},
+  { name: 'unlink', icon: 'icon-unlink' },
+  { name: 'separator' },
+  { name: 'code', , icon: 'icon-code' },
+];
+**/
 
 
 render(
