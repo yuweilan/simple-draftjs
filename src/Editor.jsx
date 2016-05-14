@@ -334,6 +334,7 @@ class PlatziEditor extends Component {
           messages={messages}
           onSendResponse={this.onSendResponse.bind(this)}
           onHideEditor={this.onHideEditor.bind(this)}
+          contentHtml={this.getHtml()}
         />
       </div>
     );

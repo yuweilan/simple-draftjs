@@ -1,12 +1,13 @@
 {
   "name": "simple-draftjs",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    prepublish: "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
