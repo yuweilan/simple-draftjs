@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { injectProps } from 'relpers';
 import classnames from 'classnames';
 import {
-  Editor,
   EditorState,
   RichUtils,
   Entity,
   AtomicBlockUtils,
 } from 'draft-js';
+import Editor from 'draft-js-plugins-editor';
+import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import { autobind } from 'core-decorators';
 import { stateToHTML } from 'draft-js-export-html';
 import { stateToMarkdown } from 'draft-js-export-markdown';
@@ -17,6 +18,10 @@ import CustomControls from './components/CustomControls';
 import EditorButtonActions from './components/EditorButtonActions';
 import getPlaceholderStyle from './utils/getPlaceholderStyle';
 import defaultControls from './constants/defaultControls';
+
+
+const linkifyPlugin = createLinkifyPlugin();
+const plugins = [linkifyPlugin];
 
 class PlatziEditor extends Component {
 
@@ -325,6 +330,7 @@ class PlatziEditor extends Component {
             placeholder={placeholder ? placeholder : ''}
             ref="editor"
             spellCheck={true}
+            plugins={plugins}
           />
           </section>
         </section>

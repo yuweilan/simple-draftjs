@@ -7,8 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _desc, _value, _class, _class2, _temp;
-// import DEFAULT_CONTROLS from '../constants/defaultControls';
-
 
 var _react = require('react');
 
@@ -23,6 +21,10 @@ var _Button2 = _interopRequireDefault(_Button);
 var _getButtons = require('../utils/getButtons');
 
 var _getButtons2 = _interopRequireDefault(_getButtons);
+
+var _defaultControls = require('../constants/defaultControls');
+
+var _defaultControls2 = _interopRequireDefault(_defaultControls);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -127,8 +129,8 @@ var InlineControls = (_class = (_temp = _class2 = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var controls = (0, _getButtons2.default)(this.props.controls);
-      if (controls.lenght === 0) return null;
+      var controlList = (0, _getButtons2.default)(this.props.controls);
+      var controls = controlList.length === 0 ? _defaultControls2.default : controlList;
       return _react2.default.createElement(
         'div',
         { className: 'RichEditor-controls' },
