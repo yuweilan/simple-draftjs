@@ -1,6 +1,6 @@
 {
   "name": "simple-draftjs",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "object-assign": "^4.1.0",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "0.14.8",
+    "react-dom": "0.14.8"
   }
 }

@@ -433,7 +433,8 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
           showButtons: showButtons,
           messages: messages,
           onSendResponse: this.onSendResponse.bind(this),
-          onHideEditor: this.onHideEditor.bind(this)
+          onHideEditor: this.onHideEditor.bind(this),
+          contentHtml: this.getHtml()
         })
       );
     }
