@@ -9,5 +9,5 @@ export default [
   { name: 'link' },
   { name: 'unlink' },
   { name: 'separator' },
-  { name: 'code' },
+  { name: 'code' }
 ];
