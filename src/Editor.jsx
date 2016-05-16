@@ -328,14 +328,18 @@ class PlatziEditor extends Component {
           />
           </section>
         </section>
-        <EditorButtonActions
-          hasHideEditorButton={showSecondButton}
-          showButtons={showButtons}
-          messages={messages}
-          onSendResponse={this.onSendResponse.bind(this)}
-          onHideEditor={this.onHideEditor.bind(this)}
-          contentHtml={this.getHtml()}
-        />
+        {
+          (showButtons && (this.getHtml() !== '<p><br/></p>')) ?
+          <EditorButtonActions
+            hasHideEditorButton={showSecondButton}
+            messages={messages}
+            onSendResponse={this.onSendResponse.bind(this)}
+            onHideEditor={this.onHideEditor.bind(this)}
+          />
+          :
+          null
+        }
+        
       </div>
     );
   }

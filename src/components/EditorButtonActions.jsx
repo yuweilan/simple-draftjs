@@ -1,9 +1,6 @@
 import React from 'react';
 
-export default ({showButtons, onSendResponse, onHideEditor, messages, hasHideEditorButton, contentHtml}) => {
-  const defaultContent = '<p><br/></p>';
-  const emptyContent = contentHtml === defaultContent;
-  if (!showButtons || emptyContent) return null;
+export default ({ onSendResponse, onHideEditor, messages, hasHideEditorButton }) => {
   return (
       <div className="RichEditor-actions">
         <button
