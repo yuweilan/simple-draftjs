@@ -20,6 +20,14 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _draftJs = require('draft-js');
 
+var _draftJsPluginsEditor = require('draft-js-plugins-editor');
+
+var _draftJsPluginsEditor2 = _interopRequireDefault(_draftJsPluginsEditor);
+
+var _draftJsLinkifyPlugin = require('draft-js-linkify-plugin');
+
+var _draftJsLinkifyPlugin2 = _interopRequireDefault(_draftJsLinkifyPlugin);
+
 var _coreDecorators = require('core-decorators');
 
 var _draftJsExportHtml = require('draft-js-export-html');
@@ -86,6 +94,9 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
 
   return desc;
 }
+
+var linkifyPlugin = (0, _draftJsLinkifyPlugin2.default)();
+var plugins = [linkifyPlugin];
 
 var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
   _inherits(PlatziEditor, _Component);
@@ -416,7 +427,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
             {
               className: (0, _getPlaceholderStyle2.default)(editorState)
             },
-            _react2.default.createElement(_draftJs.Editor, {
+            _react2.default.createElement(_draftJsPluginsEditor2.default, {
               blockStyleFn: this.getBlockStyle,
               blockRendererFn: this.getMediaBlockRenderer,
               editorState: editorState,
@@ -424,7 +435,8 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
               onChange: this.onChange,
               placeholder: placeholder ? placeholder : '',
               ref: 'editor',
-              spellCheck: true
+              spellCheck: true,
+              plugins: plugins
             })
           )
         ),
