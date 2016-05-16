@@ -428,14 +428,12 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
             })
           )
         ),
-        _react2.default.createElement(_EditorButtonActions2.default, {
+        showButtons && this.getHtml() !== '<p><br/></p>' ? _react2.default.createElement(_EditorButtonActions2.default, {
           hasHideEditorButton: showSecondButton,
-          showButtons: showButtons,
           messages: messages,
           onSendResponse: this.onSendResponse.bind(this),
-          onHideEditor: this.onHideEditor.bind(this),
-          contentHtml: this.getHtml()
-        })
+          onHideEditor: this.onHideEditor.bind(this)
+        }) : null
       );
     }
 
