@@ -64,7 +64,7 @@ class InlineControls extends Component {
    */
   render() {
     const controlList = getButtons(this.props.controls);
-    const controls = (controlList.lenght === 0) ? controlList || DEFAULT_CONTROLS;
+    const controls = (controlList.length === 0) ? controlList || DEFAULT_CONTROLS;
     return (
       <div className="RichEditor-controls">
         {controls.map((control, index) => this.selectType(control, index))}
