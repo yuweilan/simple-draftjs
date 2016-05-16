@@ -1,6 +1,6 @@
 {
   "name": "simple-draftjs",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
@@ -56,6 +56,8 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "draft-js-linkify-plugin": "^1.0.1",
+    "draft-js-plugins-editor": "^1.0.1",
     "object-assign": "^4.1.0",
     "react": "0.14.8",
     "react-dom": "0.14.8"
