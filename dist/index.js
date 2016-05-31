@@ -15,7 +15,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactDom.render)(_react2.default.createElement(_Editor2.default, {
   getContentAction: printHTML,
   hideButtonAction: closeEditor,
-  placeholder: "do somenthing!"
+  placeholder: "do somenthing!",
+  defaultHTML: '<h1>hello world</h1> <br /> <b>text</b><i>italic</i>'
 }), document.getElementById('root'));
 // import Editor from './Editor.jsx'
 

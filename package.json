@@ -43,11 +43,6 @@
     "classnames": "^2.2.3",
     "core-decorators": "^0.12.2",
     "draft-js": "^0.5.0",
-    "draft-js-export-html": "^0.1.12",
-    "draft-js-export-markdown": "^0.1.4",
-    "draft-js-import-html": "^0.1.10",
-    "draft-js-linkify-plugin": "^1.0.1",
-    "draft-js-plugins-editor": "^1.0.1",
     "eslint": "^2.8.0",
     "eslint-plugin-react": "^3.6.2",
     "immutable": "^3.8.1",
@@ -57,6 +52,9 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "draft-js-export-html": "^0.1.12",
+    "draft-js-export-markdown": "^0.1.4",
+    "draft-js-import-html": "^0.1.10",
     "draft-js-linkify-plugin": "^1.0.1",
     "draft-js-plugins-editor": "^1.0.1",
     "object-assign": "^4.1.0",
