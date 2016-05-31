@@ -12,6 +12,7 @@ import createLinkifyPlugin from 'draft-js-linkify-plugin';
 import { autobind } from 'core-decorators';
 import { stateToHTML } from 'draft-js-export-html';
 import { stateToMarkdown } from 'draft-js-export-markdown';
+import { stateFromHTML } from 'draft-js-import-html';
 import linkDecorator from './decorators/linkDecorator';
 import Media from './components/Media';
 import CustomControls from './components/CustomControls';
@@ -52,7 +53,7 @@ class PlatziEditor extends Component {
   };
 
   state = {
-    editorState: EditorState.createEmpty(linkDecorator),
+    editorState: this.getInitialEditorState(),
     urlValue: '',
     showUrlInput: false,
     addingMedia: false,
@@ -417,6 +418,17 @@ class PlatziEditor extends Component {
     this.setState({
       editorState: EditorState.createEmpty(linkDecorator),
     });
+  }
+
+  @autobind
+  getInitialEditorState() {
+    const { defaultHTML } = this.props;
+    if (defaultHTML) {
+      const content = stateFromHTML(defaultHTML);
+      return EditorState
+      .createWithContent(content, linkDecorator);
+    }
+    return EditorState.createEmpty(linkDecorator);
   }
 }
 

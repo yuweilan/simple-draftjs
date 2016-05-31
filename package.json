@@ -1,6 +1,6 @@
 {
   "name": "simple-draftjs",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
@@ -45,6 +45,7 @@
     "draft-js": "^0.5.0",
     "draft-js-export-html": "^0.1.12",
     "draft-js-export-markdown": "^0.1.4",
+    "draft-js-import-html": "^0.1.10",
     "draft-js-linkify-plugin": "^1.0.1",
     "draft-js-plugins-editor": "^1.0.1",
     "eslint": "^2.8.0",
