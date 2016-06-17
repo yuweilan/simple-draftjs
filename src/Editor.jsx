@@ -302,8 +302,11 @@ class PlatziEditor extends Component {
 
 
   @injectProps
-  render({placeholder, showSecondButton, showButtons, messages, controls}) {
+  render({inactive = false, placeholder, showSecondButton, showButtons, messages, controls}) {
     const {editorState} = this.state;
+    if (inactive) {
+      setTimeout(() => this.refs.editor.blur(), 0);
+    }
     return (
       <div>
         <section className="RichEditor-root">
@@ -346,7 +349,7 @@ class PlatziEditor extends Component {
           :
           null
         }
-        
+
       </div>
     );
   }
