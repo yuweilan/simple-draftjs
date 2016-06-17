@@ -68,6 +68,9 @@ class PlatziEditor extends Component {
    * @param  {Object} editorState
    */
   onChange(editorState) {
+    if (this.props.inactive) {
+      return;
+    }
     this.setState({
       editorState,
     });
@@ -304,9 +307,6 @@ class PlatziEditor extends Component {
   @injectProps
   render({inactive = false, placeholder, showSecondButton, showButtons, messages, controls}) {
     const {editorState} = this.state;
-    if (inactive) {
-      setTimeout(() => this.refs.editor.blur(), 0);
-    }
     return (
       <div>
         <section className="RichEditor-root">

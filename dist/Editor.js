@@ -397,6 +397,10 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
   }, {
     key: 'render',
     value: function render(_ref) {
+      var _this6 = this;
+
+      var _ref$inactive = _ref.inactive;
+      var inactive = _ref$inactive === undefined ? false : _ref$inactive;
       var placeholder = _ref.placeholder;
       var showSecondButton = _ref.showSecondButton;
       var showButtons = _ref.showButtons;
@@ -404,6 +408,11 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
       var controls = _ref.controls;
       var editorState = this.state.editorState;
 
+      if (inactive) {
+        setTimeout(function () {
+          return _this6.refs.editor.blur();
+        }, 0);
+      }
       return _react2.default.createElement(
         'div',
         null,
