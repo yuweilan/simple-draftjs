@@ -8,6 +8,7 @@ render(
     getContentAction={printHTML}
     hideButtonAction={closeEditor}
     placeholder={"do somenthing!"}
+    inactive
     defaultHTML="<h1>hello world</h1> <br /> <b>text</b><i>italic</i>"
   />,
   document.getElementById('root')

@@ -1,6 +1,6 @@
 {
   "name": "simple-draftjs",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
