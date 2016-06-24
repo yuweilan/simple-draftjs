@@ -305,13 +305,14 @@ class PlatziEditor extends Component {
 
 
   @injectProps
-  render({inactive = false, inactiveStyle, placeholder, showSecondButton, showButtons, messages, controls}) {
+  render({inactive = false, inactiveStyle, classInactive, placeholder, showSecondButton, showButtons, messages, controls}) {
     const {editorState} = this.state;
-    const inactiveStyle = inactiveStyle ? inactiveStyle : ((!inactive) ? null : {
+    const cssStyle = (inactiveStyle) ? inactiveStyle : {
       background: '#ddd',
       color: '#ccc',
       cursor: 'wait',
-    };)
+    };
+    const style = (inactive) ? cssStyle : null;
     return (
       <div>
         <section className="RichEditor-root">
@@ -328,8 +329,8 @@ class PlatziEditor extends Component {
           </header>
           {this.renderUrlInput()}
           <section
-            className={getPlaceholderStyle(editorState)}
-            style={inactiveStyle}
+            className={`${getPlaceholderStyle(editorState)} ${classInactive}`}
+            style={style}
           >
           <Editor
             blockStyleFn={this.getBlockStyle}

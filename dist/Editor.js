@@ -402,6 +402,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
     value: function render(_ref) {
       var _ref$inactive = _ref.inactive;
       var inactive = _ref$inactive === undefined ? false : _ref$inactive;
+      var inactiveStyle = _ref.inactiveStyle;
       var placeholder = _ref.placeholder;
       var showSecondButton = _ref.showSecondButton;
       var showButtons = _ref.showButtons;
@@ -409,11 +410,12 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
       var controls = _ref.controls;
       var editorState = this.state.editorState;
 
-      var inactiveStyle = !inactive ? null : {
+      var cssStyle = inactiveStyle ? inactiveStyle : {
         background: '#ddd',
         color: '#ccc',
         cursor: 'wait'
       };
+      var style = inactive ? cssStyle : null;
       return _react2.default.createElement(
         'div',
         null,
@@ -438,7 +440,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
             'section',
             {
               className: (0, _getPlaceholderStyle2.default)(editorState),
-              style: inactiveStyle
+              style: style
             },
             _react2.default.createElement(_draftJsPluginsEditor2.default, {
               blockStyleFn: this.getBlockStyle,
