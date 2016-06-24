@@ -305,13 +305,13 @@ class PlatziEditor extends Component {
 
 
   @injectProps
-  render({inactive = false, placeholder, showSecondButton, showButtons, messages, controls}) {
+  render({inactive = false, inactiveStyle, placeholder, showSecondButton, showButtons, messages, controls}) {
     const {editorState} = this.state;
-    const inactiveStyle = (!inactive) ? null : {
+    const inactiveStyle = inactiveStyle ? inactiveStyle : ((!inactive) ? null : {
       background: '#ddd',
       color: '#ccc',
       cursor: 'wait',
-    };
+    };)
     return (
       <div>
         <section className="RichEditor-root">
