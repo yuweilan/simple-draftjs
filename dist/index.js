@@ -16,14 +16,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   getContentAction: printHTML,
   hideButtonAction: closeEditor,
   placeholder: "do somenthing!",
-  inactive: true,
-  defaultHTML: '<h1>hello world</h1> <br /> <b>text</b><i>italic</i>'
+  defaultHTML: '<p>hello world</p> <br /> <b>text</b><i>italic</i>'
 }), document.getElementById('root'));
 // import Editor from './Editor.jsx'
 
 
 function printHTML(content) {
-  console.log("func ok");
+  console.log("func ok", content);
 }
 
 function closeEditor() {

@@ -443,7 +443,7 @@ class PlatziEditor extends Component {
 
   @autobind
   urlify(text) {
-    const urlRegex = /((.*)\.([a-z]*)<\/p>)/gi;
+    const urlRegex = /((.*)\.([a-z]*))/gi;
     return text.replace(urlRegex, (url) => {
       const finalUrl = ((url.replace('<p>','')).replace('</p>', ''));
         return `<a href="${finalUrl}">${finalUrl}</a> `;

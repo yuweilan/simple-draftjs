@@ -403,6 +403,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
       var _ref$inactive = _ref.inactive;
       var inactive = _ref$inactive === undefined ? false : _ref$inactive;
       var inactiveStyle = _ref.inactiveStyle;
+      var classInactive = _ref.classInactive;
       var placeholder = _ref.placeholder;
       var showSecondButton = _ref.showSecondButton;
       var showButtons = _ref.showButtons;
@@ -439,7 +440,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
           _react2.default.createElement(
             'section',
             {
-              className: (0, _getPlaceholderStyle2.default)(editorState),
+              className: (0, _getPlaceholderStyle2.default)(editorState) + ' ' + classInactive,
               style: style
             },
             _react2.default.createElement(_draftJsPluginsEditor2.default, {
@@ -508,7 +509,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
     value: function getHtml() {
       var editorState = this.state.editorState;
 
-      return (0, _draftJsExportHtml.stateToHTML)(editorState.getCurrentContent());
+      return this.urlify((0, _draftJsExportHtml.stateToHTML)(editorState.getCurrentContent()));
     }
 
     /**
@@ -546,6 +547,15 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
       }
       return _draftJs.EditorState.createEmpty(_linkDecorator2.default);
     }
+  }, {
+    key: 'urlify',
+    value: function urlify(text) {
+      var urlRegex = /((.*)\.([a-z]*)<\/p>)/gi;
+      return text.replace(urlRegex, function (url) {
+        var finalUrl = url.replace('<p>', '').replace('</p>', '');
+        return '<a href="' + finalUrl + '">' + finalUrl + '</a> ';
+      });
+    }
   }]);
 
   return PlatziEditor;
@@ -571,5 +581,5 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
     }
   },
   controls: _defaultControls2.default
-}, _temp), (_applyDecoratedDescriptor(_class.prototype, 'onChangeUrl', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onChangeUrl'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onAddMedia', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onAddMedia'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onPromptForLink', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onPromptForLink'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onRemoveLink', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onRemoveLink'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onConfirmLink', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onConfirmLink'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onConfirmAddMedia', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onConfirmAddMedia'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onLinkInputKeyDown', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onLinkInputKeyDown'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onSendResponse', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onSendResponse'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onHideEditor', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onHideEditor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getBlockStyle', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getBlockStyle'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'renderUrlInput', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'renderUrlInput'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'render', [_relpers.injectProps], Object.getOwnPropertyDescriptor(_class.prototype, 'render'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'toggleInlineStyle', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'toggleInlineStyle'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'toggleBlockType', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'toggleBlockType'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'handleKeyCommand', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'handleKeyCommand'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getHtml', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getHtml'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getMarkdown', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getMarkdown'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'resetEditor', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'resetEditor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getInitialEditorState', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getInitialEditorState'), _class.prototype)), _class);
+}, _temp), (_applyDecoratedDescriptor(_class.prototype, 'onChangeUrl', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onChangeUrl'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onAddMedia', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onAddMedia'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onPromptForLink', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onPromptForLink'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onRemoveLink', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onRemoveLink'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onConfirmLink', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onConfirmLink'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onConfirmAddMedia', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onConfirmAddMedia'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onLinkInputKeyDown', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onLinkInputKeyDown'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onSendResponse', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onSendResponse'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'onHideEditor', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'onHideEditor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getBlockStyle', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getBlockStyle'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'renderUrlInput', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'renderUrlInput'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'render', [_relpers.injectProps], Object.getOwnPropertyDescriptor(_class.prototype, 'render'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'toggleInlineStyle', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'toggleInlineStyle'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'toggleBlockType', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'toggleBlockType'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'handleKeyCommand', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'handleKeyCommand'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getHtml', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getHtml'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getMarkdown', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getMarkdown'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'resetEditor', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'resetEditor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'getInitialEditorState', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'getInitialEditorState'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'urlify', [_coreDecorators.autobind], Object.getOwnPropertyDescriptor(_class.prototype, 'urlify'), _class.prototype)), _class);
 exports.default = PlatziEditor;
