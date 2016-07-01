@@ -3,8 +3,8 @@ Simple Draft-js
 
 Minimal wysiwyg rich editor using draftjs (Rich editor framework for React).
 
-## [Demo](http://platzidev.github.io/simple-draftjs/)
-
+## Demo
+http://platzidev.github.io/simple-draftjs/
 ## Install
 ```
 npm i -S simple-draftjs
@@ -67,8 +67,19 @@ function closeEditor() {
 ```
 ## Options
 Options should be set via props
+|Option (prop) |type|description|required|
+|-|-|-|-|
+|**getContentAction**|function|callback that return html or markdown content when "send" button is clicked or the state change|*|
+|**placeholder**|string|Placeholder for empty editor|-|
+|**controls**|array|list of elements to show as button options|-|
+|**export**|stirng|Format for return. options: HTML, Markdown|-|
+|**messages**|Object|text for buttons|-|
+|**inactive**|boolean|block editor if it is true|-|
+|**inactiveStyle**|object|CSS React object for inactive state|-|
+|**hideButtonAction**|func|callback for 'cancel' button click event| -|
 
-#### getContentActions (required)
+
+#### getContentAction (required)
 [function] callback that return html or markdown content when "send" button is clicked or the state change
 ```javascript
 function getContent(content) {
@@ -103,6 +114,17 @@ export default [
 #### export (optional)
 [option: "html", "markdown"]
 default: "html"
+
+### messages (optional)
+default:
+```
+messages: {
+  buttons: {
+    send: 'Send',
+    cancel: 'Cancel',
+  }
+},
+```
 
 ### How to Run?
 
