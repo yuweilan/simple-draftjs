@@ -67,6 +67,8 @@ function closeEditor() {
 ```
 ## Options
 Options should be set via props
+
+
 |Option (prop) |type|description|required|
 |-|-|-|-|
 |**getContentAction**|function|callback that return html or markdown content when "send" button is clicked or the state change|*|
