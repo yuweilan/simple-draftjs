@@ -407,7 +407,7 @@ class PlatziEditor extends Component {
   @autobind
   getHtml() {
     const { editorState } = this.state;
-    return stateToHTML(editorState.getCurrentContent());
+    return this.urlify(stateToHTML(editorState.getCurrentContent()));
   }
 
   /**
@@ -439,6 +439,15 @@ class PlatziEditor extends Component {
       .createWithContent(content, linkDecorator);
     }
     return EditorState.createEmpty(linkDecorator);
+  }
+
+  @autobind
+  urlify(text) {
+    const urlRegex = /((.*)\.([a-z]*)<\/p>)/gi;
+    return text.replace(urlRegex, (url) => {
+      const finalUrl = ((url.replace('<p>','')).replace('</p>', ''));
+        return `<a href="${finalUrl}">${finalUrl}</a> `;
+    });
   }
 }
 
