@@ -550,7 +550,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
   }, {
     key: 'urlify',
     value: function urlify(text) {
-      var urlRegex = /((.*)\.([a-z]*)<\/p>)/gi;
+      var urlRegex = /((.*)\.([a-z]*))/gi;
       return text.replace(urlRegex, function (url) {
         var finalUrl = url.replace('<p>', '').replace('</p>', '');
         return '<a href="' + finalUrl + '">' + finalUrl + '</a> ';
