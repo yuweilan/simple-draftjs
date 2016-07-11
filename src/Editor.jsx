@@ -402,7 +402,7 @@ class PlatziEditor extends Component {
   @autobind
   getHtml() {
     const { editorState } = this.state;
-    return this.urlify(stateToHTML(editorState.getCurrentContent()));
+    return stateToHTML(editorState.getCurrentContent());
   }
 
   /**
