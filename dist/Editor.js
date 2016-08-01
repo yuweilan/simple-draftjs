@@ -107,13 +107,21 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
     _this.onChange = _this.onChange.bind(_this);
     return _this;
   }
-  /**
-   * Change editor state
-   * @param  {Object} editorState
-   */
-
 
   _createClass(PlatziEditor, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.focus) {
+        this.refs.editor.focus();
+      }
+    }
+
+    /**
+     * Change editor state
+     * @param  {Object} editorState
+     */
+
+  }, {
     key: 'onChange',
     value: function onChange(editorState) {
       if (this.props.inactive) {
@@ -556,7 +564,8 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
   isDetail: _react.PropTypes.bool,
   export: _react.PropTypes.oneOf(['markdown', 'html']),
   messages: _react.PropTypes.object,
-  controls: _react.PropTypes.array
+  controls: _react.PropTypes.array,
+  focus: _react.PropTypes.bool
 }, _class2.defaultProps = {
   showButtons: true,
   markdown: false,

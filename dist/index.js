@@ -16,7 +16,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   getContentAction: printHTML,
   hideButtonAction: closeEditor,
   placeholder: "do somenthing!",
-  defaultHTML: '<p>hello world</p> <br /> <b>text</b><i>italic</i>'
+  defaultHTML: '<p>hello world</p> <br /> <b>text</b><i>italic</i>',
+  focus: true
 }), document.getElementById('root'));
 // import Editor from './Editor.jsx'
 
