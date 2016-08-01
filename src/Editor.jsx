@@ -32,6 +32,7 @@ class PlatziEditor extends Component {
     export: PropTypes.oneOf(['markdown', 'html']),
     messages: PropTypes.object,
     controls: PropTypes.array,
+    focus: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -59,6 +60,13 @@ class PlatziEditor extends Component {
     super(props);
     this.onChange = this.onChange.bind(this);
   }
+
+  componentDidMount() {
+    if (this.props.focus) {
+      this.refs.editor.focus();
+    }
+  }
+
   /**
    * Change editor state
    * @param  {Object} editorState

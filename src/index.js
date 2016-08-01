@@ -9,6 +9,7 @@ render(
     hideButtonAction={closeEditor}
     placeholder={"do somenthing!"}
     defaultHTML="<p>hello world</p> <br /> <b>text</b><i>italic</i>"
+    focus
   />,
   document.getElementById('root')
 );
