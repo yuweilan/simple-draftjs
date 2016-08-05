@@ -3,19 +3,23 @@ import { render } from 'react-dom';
 // import Editor from './Editor.jsx'
 import Editor from './Editor.jsx';
 
+const content = `<br><br><span><h3>Grupo en Facebook<br></h3><span><br>Cuando estamos rodeados de personas que <strong>piensan, comparten y destacan</strong> con su talento, irremediablemente empezaremos a hacer lo mismo.<br><br>Crecer como comunidad es uno de los retos más grandes que tenemos como plataforma. Sabemos que cuando un estudiante mejora, el resto también lo hará.&nbsp;<br><br>Es por ello que&nbsp;te invitamos a formar&nbsp;parte de nuestro grupo exclusivo&nbsp;en Facebook.&nbsp;<br><br>Déjanos&nbsp;<strong>tu correo en los comentarios</strong>&nbsp;para enviarte la invitación.<br><br></span></span>Eres genial, nunca lo dudes.<br><br>Pero para desarrollar tus mejores habilidades debes&nbsp;estar conectado <strong>mucho más</strong> con el ecosistema, para ayudarnos entre nosotros y crear mayor tracción en conjunto.<span><br><br><br><img alt="pikachu" src="http://vignette2.wikia.nocookie.net/pokemon/images/b/b1/025Pikachu_XY_anime_3.png/revision/latest?cb=20140902050035"/><br><h3>Comunidad Platzi<br></h3><br>Recuerda que nos reunimos&nbsp;TODOS&nbsp;los lunes en&nbsp;<a rel="nofollow" target="_blank" href="https://platzi.com/clases/comunidad-platzi/">Comunidad Platzi</a>, nuestro stream principal.&nbsp;<br><br></span><span>Es dirigido por&nbsp;<a rel="nofollow" target="_blank" href="https://twitter.com/maldeadora">Nicole Chapaval</a>&nbsp;y por estudiantes destacados.&nbsp;<br></span><br>Finalmente, te recomendamos unirte&nbsp;a <a rel="nofollow" target="_blank" href="http://soyplatzi.herokuapp.com/">nuestro canal de Slack.</a><br><br><span>En serio.&nbsp;Este es <strong>SU</strong> espacio.<br><br>Siéntanse seguros de participar.<br><span><br>Confíen en que los&nbsp;ayudaremos a alcanzar su mejor versión profesional, a través de nuestra plataforma y comunidad.<br><br><strong>Asuman que SON el futuro de de nuestros ecosistemas.&nbsp;</strong><br><br>Juguemos al más alto nivel.<br><br></span></span>Bienvenidos.<br><br><br>`;
+
+const content2 = `<br><h2>Welcome to our masterclass on&nbsp;how to run a one-person online business</h2><br>My name is&nbsp;<a rel="nofollow" target="_blank" href="https://twitter.com/abracarioca">Anna Heim</a>&nbsp;and I'm one of the members of Team Platzi.&nbsp;<br><br>In this free masterclass in English, David Kadavy will tell you how he managed to build a&nbsp;6-figure online business on his own,&nbsp;and how you could do the same.<br><br><h3>When does the masterclass start?</h3><br><strong>Update: The class will be broadcast live&nbsp;on December 17th 2015 from 12pm PT.</strong><br><br><h3>Who will be our teacher?</h3><br><a rel="nofollow" target="_blank" href="https://twitter.com/kadavy">David Kadavy</a> is the&nbsp;author of best-selling book "Design for Hackers."&nbsp;He blogged his way to a book deal, and managed to grow his own distribution list from 5,000 subscribers to 30,000 quality subscribers in only two weeks.<br><br><img alt="" src="https://static.platzi.com/media/teachers/kadavy.jpg"><br><br><h3>What will we will study?</h3>- Define your project <br>- Design a unique product <br>- Build a strong following <br>- Boost your creativity <br>- Evaluate potential ideas <br>- Sharpen your concept <br>- Monetize your efforts <br>- Minimize your investment <br>- Decide what you should blog about (and why it doesn't matter) <br>- Master email marketing <br>- Build an audience with explosive blog posts <br>- Go from blog to business <br>- Discover growth and life hacks <br>- Stay sane and productive<br>-&nbsp;Succeed as a solo entrepreneur&nbsp;<br><h3>Share and comment</h3>While you are watching the class, you can start threads asking questions or sharing your notes in our discussion area:<br><br><img alt="" src="http://l4c.me/fullsize/find1-1424122211.png"><br><br><br>Keep in mind that a recording will be available very soon after the class. Still, we encourage you to follow it live to participate in the interaction.&nbsp;<br><br><strong>Enjoy!</strong><br>`;
+
 render(
   <Editor
     getContentAction={printHTML}
     hideButtonAction={closeEditor}
     placeholder={"do somenthing!"}
-    defaultHTML="<p>hello world</p> <br /> <b>text</b><i>italic</i>"
+    defaultHTML={content2}
     focus
   />,
   document.getElementById('root')
 );
 
 function printHTML(content) {
-  console.log("func ok", content);
+  console.log("func ok", content.toString());
 }
 
 function closeEditor() {

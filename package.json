@@ -1,6 +1,6 @@
 {
   "name": "simple-draftjs",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "Simple rich editor for React.js built with draftjs",
   "main": "dist/Editor.js",
   "scripts": {
@@ -42,7 +42,7 @@
     "babel-preset-stage-1": "^6.5.0",
     "classnames": "^2.2.3",
     "core-decorators": "^0.12.2",
-    "draft-js": "^0.5.0",
+    "draft-js": "^0.7.0",
     "eslint": "^2.8.0",
     "eslint-plugin-react": "^3.6.2",
     "immutable": "^3.8.1",
@@ -52,8 +52,8 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
-    "draft-js-export-html": "^0.1.12",
-    "draft-js-export-markdown": "^0.1.4",
+    "draft-js-export-html": "^0.1.13",
+    "draft-js-export-markdown": "^0.1.5",
     "draft-js-import-html": "^0.1.10",
     "draft-js-linkify-plugin": "^1.0.1",
     "draft-js-plugins-editor": "^1.0.1",

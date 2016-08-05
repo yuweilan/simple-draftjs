@@ -124,6 +124,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
   }, {
     key: 'onChange',
     value: function onChange(editorState) {
+      debugger;
       if (this.props.inactive) {
         return;
       }
@@ -264,6 +265,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
       var validateImage = /\.(jpg|jpeg|png)$/.test(urlValue);
       if (!urlValue !== '' && validateImage) {
         var entityKey = _draftJs.Entity.create('IMAGE', 'IMMUTABLE', { src: urlValue });
+        debugger;
         this.setState({
           editorState: _draftJs.AtomicBlockUtils.insertAtomicBlock(editorState, entityKey, ' '),
           urlValue: '',
@@ -539,6 +541,7 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
 
       if (defaultHTML) {
         var content = (0, _draftJsImportHtml.stateFromHTML)(defaultHTML);
+        debugger;
         return _draftJs.EditorState.createWithContent(content, _linkDecorator2.default);
       }
       return _draftJs.EditorState.createEmpty(_linkDecorator2.default);

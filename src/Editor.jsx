@@ -4,9 +4,11 @@ import classnames from 'classnames';
 import {
   EditorState,
   RichUtils,
+  ContentState,
   Entity,
   AtomicBlockUtils,
   Editor,
+  convertFromHTML,
 } from 'draft-js';
 import { autobind } from 'core-decorators';
 import { stateToHTML } from 'draft-js-export-html';
@@ -437,7 +439,7 @@ class PlatziEditor extends Component {
   getInitialEditorState() {
     const { defaultHTML } = this.props;
     if (defaultHTML) {
-      const content = stateFromHTML(defaultHTML);
+      const content = ContentState.createFromBlockArray(convertFromHTML(defaultHTML));
       return EditorState
       .createWithContent(content, linkDecorator);
     }

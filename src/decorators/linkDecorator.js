@@ -1,4 +1,5 @@
 import Link from '../components/Link';
+import Image from '../components/Image';
 import {CompositeDecorator, Entity} from 'draft-js';
 
 /**
@@ -20,9 +21,29 @@ function findLinkEntities(contentBlock, callback) {
   );
 }
 
+function findImageEntities(contentBlock, callback) {
+  contentBlock.findEntityRanges(
+    (character) => {
+      const entityKey = character.getEntity();
+      if (entityKey !== null && Entity.get(entityKey).getType() === 'IMAGE') {
+        debugger
+        console.log(Entity.get(entityKey).getType());
+      }
+      return (
+        entityKey !== null &&
+        Entity.get(entityKey).getType() === 'IMAGE'
+      );
+    }
+  );
+}
+
 export default new CompositeDecorator([
   {
     strategy: findLinkEntities,
     component: Link,
   },
+/*  {
+    strategy: findImageEntities,
+    component: Image,
+  }*/
 ]);
