@@ -18,8 +18,10 @@ render(
   document.getElementById('root')
 );
 
-function printHTML(content) {
+function printHTML(content, raw) {
+
   console.log("func ok", content.toString());
+  console.log(raw)
 }
 
 function closeEditor() {

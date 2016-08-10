@@ -9,6 +9,7 @@ import {
   AtomicBlockUtils,
   Editor,
   convertFromHTML,
+  convertToRaw,
 } from 'draft-js';
 import { autobind } from 'core-decorators';
 import { stateToHTML } from 'draft-js-export-html';
@@ -83,9 +84,12 @@ class PlatziEditor extends Component {
     // send html content to the parent component
     if (!this.props.isDetail) {
       this.props.getContentAction(
-        this.props.export === 'markdown'
+        (
+          this.props.export === 'markdown'
           ? this.getMarkdown()
           : this.getHtml()
+        ),
+        convertToRaw(editorState.getCurrentContent())
       );
     }
   }
