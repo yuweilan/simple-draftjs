@@ -10,11 +10,13 @@ import {
   Editor,
   convertFromHTML,
   convertToRaw,
+  convertFromRaw,
 } from 'draft-js';
 import { autobind } from 'core-decorators';
 import { stateToHTML } from 'draft-js-export-html';
 import { stateToMarkdown } from 'draft-js-export-markdown';
 import { stateFromHTML } from 'draft-js-import-html';
+//import { stateFromElement } from 'draft-js-import-element';
 import linkDecorator from './decorators/linkDecorator';
 import Media from './components/Media';
 import CustomControls from './components/CustomControls';
@@ -69,6 +71,7 @@ class PlatziEditor extends Component {
       this.refs.editor.focus();
     }
   }
+
 
   /**
    * Change editor state
@@ -430,34 +433,60 @@ class PlatziEditor extends Component {
   }
 
   /**
+   * set HTML tags, Add 'figure' after and before
+   * @return {[type]} [description]
+   */
+  @injectProps
+  getFilteredHTML({ defaultHTML }) {
+    if (defaultHTML) {
+
+      const reg = /(<img[\w\W]+?>)/gi;
+      return defaultHTML
+        .replace(reg, '<figure>' + '$1'+ '</figure>');
+        //.replace(regFigure, '$2');
+    }
+    return '';
+  }
+
+
+  /**
    * Change editor state to empty
    */
   @autobind
   resetEditor() {
     this.setState({
-      editorState: EditorState.createEmpty(linkDecorator),
+      editorState: EditorState
+        .createEmpty(linkDecorator),
     });
   }
 
   @autobind
   getInitialEditorState() {
-    const { defaultHTML } = this.props;
-    if (defaultHTML) {
-      const content = ContentState.createFromBlockArray(convertFromHTML(defaultHTML));
+    const {
+      defaultHTML,
+      createFromRaw,
+      raw,
+    } = this.props;
+
+    if (createFromRaw && raw) {
       return EditorState
-      .createWithContent(content, linkDecorator);
+        .createWithContent(
+          convertFromRaw(raw),
+          linkDecorator
+        );
+    }
+    if (defaultHTML) {
+
+      const contentState = stateFromHTML(this.getFilteredHTML());
+      return EditorState
+        .createWithContent(
+          contentState,
+          linkDecorator
+        );
     }
     return EditorState.createEmpty(linkDecorator);
   }
 
-  @autobind
-  urlify(text) {
-    const urlRegex = /((\S*)\.([a-z]{2,5}))/gi;
-    return text.replace(urlRegex, (url) => {
-      const finalUrl = ((url.replace('<p>','')).replace('</p>', ''));
-        return `<a href="${finalUrl}" target="_black">${finalUrl}</a> `;
-    });
-  }
 }
 
 export default PlatziEditor;

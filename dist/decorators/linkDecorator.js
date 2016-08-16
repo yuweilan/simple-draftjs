@@ -43,7 +43,4 @@ function findImageEntities(contentBlock, callback) {
 exports.default = new _draftJs.CompositeDecorator([{
   strategy: findLinkEntities,
   component: _Link2.default
-}, {
-  strategy: findImageEntities,
-  component: _Image2.default
 }]);
