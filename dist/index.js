@@ -21,23 +21,21 @@ var content2 = '<a rel="nofollow" target="_blank" href="https://twitter.com/abra
 
 var content3 = { "entityMap": { "0": { "type": "IMAGE", "mutability": "IMMUTABLE", "data": { "src": "https://media.licdn.com/media/p/3/005/0b1/0eb/3c893e3.png" } } }, "blocks": [{ "key": "8bo5u", "text": "", "type": "unstyled", "depth": 0, "inlineStyleRanges": [], "entityRanges": [] }, { "key": "5racg", "text": " ", "type": "atomic", "depth": 0, "inlineStyleRanges": [], "entityRanges": [{ "offset": 0, "length": 1, "key": 0 }] }, { "key": "dnvq5", "text": "", "type": "unstyled", "depth": 0, "inlineStyleRanges": [], "entityRanges": [] }] };
 
-var textimg = "<b>fuck colo</b>gfgdgdf<img src='https://media.licdn.com/media/p/3/005/0b1/0eb/3c893e3.png'/><h2>holaa</h2><p>fsdfsdfsdfsdsd</p>";
-var reg = /(<img([\w\W]+?)>)(<\/figure>)/g;
-
-var newR = content2.replace(reg, '<figure>' + '$1' + '</figure>');
-
 (0, _reactDom.render)(_react2.default.createElement(_Editor2.default, {
   getContentAction: printHTML,
   hideButtonAction: closeEditor,
   placeholder: "do somenthing!",
   defaultHTML: content2,
+  createFromRaw: true,
+  raw: content3,
   focus: true
 }), document.getElementById('root'));
 
 function printHTML(content, raw) {
 
   //console.log("func ok", content.toString());
-  console.log("dfsdf");
+  console.log(content);
+  console.log(JSON.stringify(raw));
   //console.log(JSON.parse(JSON.stringify(raw)));
 }
 

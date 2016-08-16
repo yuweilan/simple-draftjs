@@ -441,9 +441,10 @@ class PlatziEditor extends Component {
     if (defaultHTML) {
 
       const reg = /(<img[\w\W]+?>)/gi;
+      const regFigure = /(<figure>)(<figure><img([\w\W]+?)><\/figure>)(<\/figure>)/gi;
       return defaultHTML
-        .replace(reg, '<figure>' + '$1'+ '</figure>');
-        //.replace(regFigure, '$2');
+        .replace(reg, '<figure>' + '$1'+ '</figure>')
+        .replace(regFigure, '$2');
     }
     return '';
   }

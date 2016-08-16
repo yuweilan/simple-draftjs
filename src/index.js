@@ -17,7 +17,6 @@ render(
     placeholder={"do somenthing!"}
     defaultHTML={content2}
     createFromRaw
-    raw={content3}
     focus
   />,
   document.getElementById('root')

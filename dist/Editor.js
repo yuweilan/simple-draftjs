@@ -22,12 +22,6 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _draftJs = require('draft-js');
 
-var _toMarkdown = require('to-markdown');
-
-var _toMarkdown2 = _interopRequireDefault(_toMarkdown);
-
-var _markdown = require('markdown');
-
 var _coreDecorators = require('core-decorators');
 
 var _draftJsExportHtml = require('draft-js-export-html');
@@ -540,12 +534,10 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
       var defaultHTML = _ref2.defaultHTML;
 
       if (defaultHTML) {
-        var md = (0, _toMarkdown2.default)(defaultHTML);
-        var HTML = _markdown.markdown.toHTML(md);
-        debugger;
-        var reg = /(<img([\w\W]+?)>)/gi;
-        console.log(reg.exec(HTML));
-        return HTML.replace(reg, '<figure>' + '$1' + '</figure>');
+
+        var reg = /(<img[\w\W]+?>)/gi;
+        return defaultHTML.replace(reg, '<figure>' + '$1' + '</figure>');
+        //.replace(regFigure, '$2');
       }
       return '';
     }
@@ -564,10 +556,16 @@ var PlatziEditor = (_class = (_temp = _class2 = function (_Component) {
   }, {
     key: 'getInitialEditorState',
     value: function getInitialEditorState() {
-      var defaultHTML = this.props.defaultHTML;
+      var _props2 = this.props;
+      var defaultHTML = _props2.defaultHTML;
+      var createFromRaw = _props2.createFromRaw;
+      var raw = _props2.raw;
 
+
+      if (createFromRaw && raw) {
+        return _draftJs.EditorState.createWithContent((0, _draftJs.convertFromRaw)(raw), _linkDecorator2.default);
+      }
       if (defaultHTML) {
-        //const contentState = ContentState.createFromBlockArray(convertFromHTML(defaultHTML));
 
         var contentState = (0, _draftJsImportHtml.stateFromHTML)(this.getFilteredHTML());
         return _draftJs.EditorState.createWithContent(contentState, _linkDecorator2.default);
